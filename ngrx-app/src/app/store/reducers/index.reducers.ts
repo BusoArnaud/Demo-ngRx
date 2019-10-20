@@ -1,2 +1,5 @@
+import { unicornsReducer } from './unicorns.reducers';
 
-export const Reducers = {};
+export const Reducers = {
+  unicornsList: unicornsReducer,
+};

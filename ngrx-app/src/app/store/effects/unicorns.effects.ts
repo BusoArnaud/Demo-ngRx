@@ -19,6 +19,7 @@ export class UnicornsEffects {
 
   $getUnicorns = createEffect(() => this.actions$.pipe(
     ofType(UnicornsActions.getUnicornsList),
+    map(() => console.log('catched')),
     exhaustMap(() => {
       return this.httpClient.get<Array<Unicorn>>('http://localhost:3000/unicorns').pipe(
         map((unicorns: Array<Unicorn>) => {
