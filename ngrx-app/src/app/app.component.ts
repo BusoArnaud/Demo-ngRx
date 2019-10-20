@@ -11,11 +11,10 @@ import { selectUnicornsList } from './store/selectors/unicorns.selectors';
 })
 export class AppComponent implements OnInit {
 
-  private UnicornsList = [];
-
   constructor(
     private store: Store<AppState>
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     setTimeout(() => {
