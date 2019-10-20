@@ -1,2 +1,5 @@
+import { UnicornsEffects } from './unicorns.effects';
 
-export const Effects = [];
+export const Effects = [
+  UnicornsEffects
+];

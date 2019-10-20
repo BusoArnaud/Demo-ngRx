@@ -7,9 +7,7 @@ const initialUnicornState: Array<Unicorn> = [];
 const unicornsReducer$ = createReducer(initialUnicornState,
   on(
     UnicornsActions.setUnicornsList,
-    (state, action) => {
-      console.log(state);
-      console.log(action);
+    (state: Array<Unicorn>, action: Array<Unicorn>) => {
       return {
         ...action
       };

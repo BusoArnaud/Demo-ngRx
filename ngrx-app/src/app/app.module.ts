@@ -7,6 +7,8 @@ import { Reducers } from './store/reducers/index.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { Effects } from './store/effects/index.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot(Reducers,
       {
         runtimeChecks: {

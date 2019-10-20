@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UnicornsActions } from './store/actions/unicorns.actions';
 import { AppState } from './store/app.state';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { selectUnicornsList } from './store/selectors/unicorns.selectors';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,17 @@ import { Store } from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
 
+  private UnicornsList = [];
+
   constructor(
     private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {
-    console.log('init app');
-    setTimeout(() =>{
+    setTimeout(() => {
       this.store.dispatch(UnicornsActions.getUnicornsList());
-      console.log('dispatched');
     }, 3000);
+
+    this.store.pipe(select(selectUnicornsList)).subscribe((res => console.log(res)));
   }
 }
