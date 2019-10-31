@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UnicornsActions } from './store/actions/unicorns.actions';
 import { AppState } from './store/app.state';
 import { select, Store } from '@ngrx/store';
-import { selectUnicornsList } from './store/selectors/unicorns.selectors';
+import {
+  selectEvenUnicornsIdList,
+  selectUnicornsList,
+} from './store/selectors/unicorns.selectors';
 
 @Component({
   selector: 'app-root',

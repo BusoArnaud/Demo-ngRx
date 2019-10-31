@@ -8,7 +8,7 @@ const getUnicornsList = createAction(
 
 const setUnicornsList = createAction(
   '[Unicorn API] Set Unicorns List',
-  props<Array<Unicorn>>()
+  props<{list: Array<Unicorn>}>()
 );
 
 export const UnicornsActions = {

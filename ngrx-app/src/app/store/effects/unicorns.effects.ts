@@ -22,7 +22,7 @@ export class UnicornsEffects {
     exhaustMap(() => {
       return this.httpClient.get<Array<Unicorn>>('http://localhost:3000/unicorns').pipe(
         map((unicorns: Array<Unicorn>) => {
-          return UnicornsActions.setUnicornsList(unicorns);
+          return UnicornsActions.setUnicornsList({list: unicorns});
         })
       );
     })

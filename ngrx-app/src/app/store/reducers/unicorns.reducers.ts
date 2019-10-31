@@ -7,10 +7,8 @@ const initialUnicornState: Array<Unicorn> = [];
 const unicornsReducer$ = createReducer(initialUnicornState,
   on(
     UnicornsActions.setUnicornsList,
-    (state: Array<Unicorn>, action: Array<Unicorn>) => {
-      return {
-        ...action
-      };
+    (state: Array<Unicorn>, action: {list: Array<Unicorn>}) => {
+      return state = action.list;
     }
   ),
 );
